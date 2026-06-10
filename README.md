@@ -12,7 +12,7 @@ The figure below shows score progression across two competitions run autonomousl
 ![Score progression across Spaceship Titanic and Playground Series S6E6](src/img/results_progression.png)
 
 | Competition | Metric | First submission | Best submission | Online gain  | Ranking |
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 | Spaceship Titanic | Accuracy | 0.7973 | 0.8071 | +0.0098 | 577 / 2209 |
 | Playground Series S6E6 | ROC-AUC | 0.9363 | 0.9578 | +0.0215 | 720 / 1211 |
 
