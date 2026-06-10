@@ -5,7 +5,7 @@ A turnkey template for running an autonomous multi-agent datascience pipeline. I
 
 ---
 
-## Results - 1h experiments
+## Results - 1h experiments Opus 4.6 medium
 
 The figure below shows score progression across two competitions run autonomously using this template. Each bar represents one submission; the orchestrator proposed the hypothesis, spawned the relevant agents, validated CV, and logged the result. No guidelines were provided.
 
