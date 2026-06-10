@@ -1,0 +1,12 @@
+{
+  "task_id": "ens_001",
+  "status": "done",
+  "blend_weights": {
+    "full_lgbm": 0.31,
+    "full_xgb": 0.69
+  },
+  "oof_accuracy": 0.812723,
+  "method": "optimized",
+  "submission_path": "experiments/ensemble/submission.csv",
+  "notes": "Grid search over w in [0,1] (101 steps). Optimal: w_lgbm=0.31, w_xgb=0.69 gives OOF acc=0.8127 vs equal-weight 0.8112."
+}

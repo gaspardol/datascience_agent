@@ -1,0 +1,8 @@
+{
+  "task_id": "cv_002",
+  "status": "pending",
+  "created_at": "2026-06-10T10:20:00Z",
+  "hypothesis": "Audit the CV-LB calibration gap of -0.0154. Confirm that after fixing LabelEncoder bug the gap narrows. Also check: (1) is GroupId in features causing train/test mismatch? (2) any other potential leakage or distribution shift? (3) check if the gap is expected given the competition's public/private split.",
+  "implementation_hints": "Read the current src/agents/model_trainer.py and src/features/engineering.py. Check: (1) Are any features computed differently between train and test? (2) Is CabinNum numeric or string in the parquet? (3) Any NaN handling inconsistency? Run python ../run.py --phase train --variants full_lgbm --n-folds 5 --sequential after the model_trainer fix lands. Compare new CV to old 0.8127. Document findings in result.json.",
+  "validate_cmd": "python ../run.py --phase train --variants full_lgbm --n-folds 5 --sequential"
+}

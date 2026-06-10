@@ -1,0 +1,16 @@
+{
+  "task_id": "sub_003",
+  "status": "pending",
+  "created_at": "2026-06-10T11:12:00Z",
+  "competition_slug": "spaceship-titanic",
+  "submission_label": "3way_lgbm_cb_xgb_v3",
+  "submission_csv": "experiments/ensemble/submission.csv",
+  "cv_score": 0.8179,
+  "model_description": "3-way grid-search blend: xgb=0.45 + lgbm=0.35 + catboost=0.20. All models retrained on fixed parquets (train-median NaN fill, consistent LabelEncoder, GroupId dropped). lgbm uses 3-seed averaging. CatBoost uses native categorical handling.",
+  "note": "New best OOF=0.8179. Previous sub_002 online=0.80102. Expect improvement.",
+  "paths": {
+    "submission_csv": "experiments/ensemble/submission.csv",
+    "ensemble_result": "experiments/ensemble/result.json",
+    "results_tsv": "results.tsv"
+  }
+}

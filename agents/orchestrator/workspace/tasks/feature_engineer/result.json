@@ -1,0 +1,25 @@
+{
+  "task_id": "fe_002",
+  "status": "completed",
+  "cv_score": 0.8088,
+  "cv_std": 0.0067,
+  "baseline_cv": 0.8086,
+  "n_folds": 3,
+  "variant": "full_lgbm",
+  "features_added": [],
+  "features_tested_and_rejected": [
+    "SoloTraveler",
+    "CabinDeck_x_Side",
+    "HasSpending",
+    "SpendPerPerson",
+    "LuxurySpend",
+    "NecessitySpend",
+    "LuxuryRatio"
+  ],
+  "correctness_fixes": [
+    "train-only Age median fill: medians now computed on training data and applied consistently to both train and test (was computed independently per split)"
+  ],
+  "feature_count": 25,
+  "notes": "All 7 proposed group-dynamics features were implemented and tested. With all 7, CV dropped to 0.8079 (vs 0.8086 baseline) — not an improvement. Features were reverted per policy (only keep if CV improves). Only the correctness fix (train-only median for Age NaN fill) was kept, yielding a marginal improvement to CV=0.8088.",
+  "hypothesis_outcome": "failed — group-dynamics features did not improve CV"
+}

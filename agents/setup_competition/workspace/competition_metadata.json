@@ -1,0 +1,10 @@
+{
+  "ref": "spaceship-titanic",
+  "title": "Spaceship Titanic",
+  "url": "https://www.kaggle.com/competitions/spaceship-titanic",
+  "description": "Predict which passengers are transported to an alternate dimension in this binary classification competition.",
+  "deadline": "2024-12-31T23:59:59Z",
+  "hostSegment": "getting-started",
+  "kernelCount": 0,
+  "teamCount": 0
+}

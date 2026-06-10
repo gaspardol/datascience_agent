@@ -1,0 +1,65 @@
+{
+  "task_id": "cv_001",
+  "status": "completed",
+  "timestamp": "2026-06-10T09:35:00Z",
+  "cv_strategy": "StratifiedGroupKFold with PassengerId group (GGGG_PP format)",
+  "implementation_summary": {
+    "method": "StratifiedGroupKFold",
+    "n_splits": 5,
+    "groups": "PassengerId first 4 digits (GGGG from GGGG_PP)",
+    "stratification": "Transported target",
+    "model": "LightGBM baseline"
+  },
+  "leakage_audit": {
+    "status": "PASS",
+    "group_integrity": "All passengers within the same group (GGGG) are kept together in train/val splits",
+    "feature_exclusions": [
+      "PassengerId (identifier, not predictive)",
+      "Name (unique per passenger, severe leakage)"
+    ],
+    "included_features": [
+      "HomePlanet (categorical)",
+      "CryoSleep (boolean)",
+      "Destination (categorical)",
+      "Age (numeric)",
+      "VIP (boolean)",
+      "RoomService (numeric)",
+      "FoodCourt (numeric)",
+      "ShoppingMall (numeric)",
+      "Spa (numeric)",
+      "VRDeck (numeric)"
+    ]
+  },
+  "cv_stability_analysis": {
+    "cv_mean": 0.8032,
+    "cv_std": 0.0078,
+    "fold_scores": [0.7941, 0.8160, 0.8074, 0.8015, 0.7969],
+    "score_range": "0.7941 - 0.8160 (0.0219 span)",
+    "stability_assessment": "GOOD - coefficient of variation = 0.97%, indicating very stable CV performance",
+    "oof_accuracy": 0.8032,
+    "cv_oof_agreement": "Perfect agreement (CV=OOF), no overfitting detected"
+  },
+  "target_rate_consistency": {
+    "overall_target_rate": 0.5036,
+    "fold_target_rates": [0.5037, 0.5037, 0.5037, 0.5035, 0.5035],
+    "target_rate_std": 0.00014,
+    "assessment": "EXCELLENT - all folds have ~50.3% Transported rate, matching overall distribution",
+    "coefficient_of_variation": "0.028%",
+    "conclusion": "No group-based class imbalance; stratification is working correctly"
+  },
+  "expected_cv_range": {
+    "baseline_cv_mean": 0.803,
+    "baseline_cv_std": 0.008,
+    "expected_range_95ci": "0.787 - 0.819",
+    "interpretation": "Future models should have CV scores within this range for the same data/group structure. Scores significantly above indicate overfitting; below indicate underfitting or class imbalance."
+  },
+  "cv_online_calibration": {
+    "note": "CV score of 0.803 is expected to correlate with online leaderboard performance if the test set follows similar distribution",
+    "recommendation": "Monitor first submission against CV estimate; if online score << 0.803, investigate distribution shift in test set"
+  },
+  "validation_command_run": "python ../run.py --phase train --variants full_lgbm --n-folds 5",
+  "validation_status": "SUCCESS",
+  "artifacts": {
+    "model_result": "experiments/models/full_lgbm/result.json"
+  }
+}

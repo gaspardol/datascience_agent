@@ -1,0 +1,8 @@
+{
+  "task_id": "fe_002",
+  "status": "pending",
+  "created_at": "2026-06-10T10:30:00Z",
+  "hypothesis": "Add stronger features: (1) group-level spending aggregates, (2) Deck×Side interaction, (3) solo traveler flag, (4) spending per-person normalized by group size. These capture group dynamics that are key in this competition.",
+  "implementation_hints": "Edit src/features/engineering.py. Add to engineer_all(df):\n\n1. SoloTraveler: GroupSize == 1 → int flag\n2. CabinDeck_x_Side: CabinDeck + '_' + CabinSide string concat (captures deck-port/starboard location)\n3. HasSpending: (TotalSpend > 0).astype(int)\n4. SpendPerPerson: TotalSpend / GroupSize (handle GroupSize=0 with fillna(1))\n5. LuxurySpend: Spa + VRDeck (luxury vs necessity spend split)\n6. NecessitySpend: RoomService + FoodCourt + ShoppingMall\n7. LuxuryRatio: LuxurySpend / (TotalSpend + 1) — proportion of spend on luxury\n\nIMPORTANT: GroupSize computation must use combined train+test as before. The engineer_all function receives a single df (train or test separately). For GroupSize you need access to both — check how it was done previously and keep the same pattern (using a global combined lookup or passing combined df).\n\nAlso fix: when filling numeric NaN with median, compute medians from TRAINING data only and apply to both train and test. The current code fills each split independently which causes inconsistency. Add a global TRAIN_MEDIANS dict that is populated on first call with is_train=True.\n\nKeep all existing 24 features. Target: CV > 0.815 with new features.",
+  "validate_cmd": "python ../run.py --phase features && python ../run.py --phase train --variants full_lgbm --n-folds 3 --sequential"
+}

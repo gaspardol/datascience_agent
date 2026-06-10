@@ -1,0 +1,1 @@
+{"task_id":"mt_005","hypothesis":"Retrain full_xgb with updated parquets (NaN fix applied).","implementation_hints":"Just run full_xgb variant — existing code is correct. No code changes needed.","validate_cmd":"python ../run.py --phase train --variants full_xgb --n-folds 5 --sequential"}

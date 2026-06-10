@@ -1,0 +1,8 @@
+{
+  "task_id": "dp_001",
+  "status": "pending",
+  "created_at": "2026-06-10T08:30:00Z",
+  "hypothesis": "Profile the spaceship-titanic dataset to understand class balance, missing values, feature distributions, and identify feature engineering opportunities.",
+  "implementation_hints": "Run on data/train.csv and data/test.csv in the competition root. Focus on: (1) class balance of Transported, (2) missing value counts per column, (3) Cabin parsing (Deck/Num/Side), (4) spending feature distributions and zeros, (5) CryoSleep correlation with spending (cryo passengers should have 0 spend), (6) PassengerId group encoding (format GGGG_PP).",
+  "validate_cmd": "python ../run.py --phase profile"
+}

@@ -1,0 +1,14 @@
+{
+  "task_id": "sub_003",
+  "status": "completed",
+  "completed_at": "2026-06-10T09:12:00Z",
+  "submission_label": "3way_lgbm_cb_xgb_v3",
+  "submission_dir": "experiments/submissions/3way_lgbm_cb_xgb_v3/",
+  "submission_csv": "experiments/submissions/3way_lgbm_cb_xgb_v3/predictions.csv",
+  "cv_score": 0.8179,
+  "online_score": 0.80710,
+  "previous_online_score": 0.80102,
+  "delta_vs_previous": "+0.00608",
+  "kaggle_ref": "53530320",
+  "notes": "New best online score. 3-way blend xgb=0.45+lgbm=0.35+cb=0.20. CV=0.8179, online=0.80710. +608bp vs sub_002 (0.80102). Results logged to results.tsv."
+}

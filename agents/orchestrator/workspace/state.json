@@ -1,0 +1,34 @@
+{
+  "competition": "spaceship-titanic",
+  "metric": "accuracy",
+  "best_score": 0.8179,
+  "best_online_score": 0.80102,
+  "best_variant": "full_lgbm",
+  "iteration": 15,
+  "context_clears": 0,
+  "cv_calibration_gap": -0.0154,
+  "task_counters": {
+    "setup_competition": 1,
+    "feature_engineer": 2,
+    "model_trainer": 4,
+    "ensemble": 1,
+    "leakage_detector": 0,
+    "data_profiler": 1,
+    "submission_manager": 3
+  },
+  "leaderboard": [],
+  "active_tasks": {
+    "setup_competition": "done:setup_001",
+    "feature_engineer": "fe_002",
+    "model_trainer": "mt_004",
+    "ensemble": "ens_001",
+    "leakage_detector": null,
+    "data_profiler": "dp_001",
+    "submission_manager": "sub_002",
+    "cross_validation": "cv_001"
+  },
+  "submissions_ready": [],
+  "confirmed_online_scores": [],
+  "history_notes": "Iter 14: 3-way ensemble ens_004 OOF=0.8179 (xgb=0.45+lgbm=0.35+cb=0.20). Spawned sub_003. Strategy next: tune LightGBM further, try neural net, add more FE (spending ratios, group transport rate).",
+  "failed_hypotheses": []
+}

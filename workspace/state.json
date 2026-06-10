@@ -1,0 +1,31 @@
+{
+  "competition": null,
+  "metric": null,
+  "best_score": null,
+  "best_online_score": null,
+  "best_variant": null,
+  "iteration": 0,
+  "context_clears": 0,
+  "cv_calibration_gap": null,
+  "task_counters": {
+    "feature_engineer": 0,
+    "model_trainer": 0,
+    "ensemble": 0,
+    "leakage_detector": 0,
+    "data_profiler": 0,
+    "submission_manager": 0
+  },
+  "leaderboard": [],
+  "active_tasks": {
+    "feature_engineer": null,
+    "model_trainer": null,
+    "ensemble": null,
+    "leakage_detector": null,
+    "data_profiler": null,
+    "submission_manager": null
+  },
+  "submissions_ready": [],
+  "confirmed_online_scores": [],
+  "history_notes": "Fresh start.",
+  "failed_hypotheses": []
+}
